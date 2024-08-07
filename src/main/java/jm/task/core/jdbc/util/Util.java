@@ -17,12 +17,13 @@ public class Util {
             Class.forName(DB_DRIVER);
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
             System.out.println("Connection OK");
-            } catch (SQLException | ClassNotFoundException e) {
-             e.printStackTrace();
-             System.out.println("Connection ERROR");
-            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Connection ERROR");
+        }
         return connection;
     }
+
     public static void closeConnection() {
         try {
             connection.close();
